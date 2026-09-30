@@ -1,6 +1,4 @@
-import { FichaTreino } from "@/core/models/ficha-treino";
-
-export interface ExercicioDivisao {
+export interface HistoricoExercicio {
 	id: string;
 	exercicioId: string;
 	divisaoId: string;
@@ -10,5 +8,4 @@ export interface ExercicioDivisao {
 		minimo: number;
 		maximo: number;
 	};
-	fichasTreino: FichaTreino[];
 }

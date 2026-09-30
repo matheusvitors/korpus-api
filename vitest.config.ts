@@ -4,9 +4,6 @@ import { loadEnv } from "vite";
 
 export default defineConfig(({ mode }) => ({
 	root: ".",
-	esbuild: {
-		tsconfigRaw: "{}",
-	},
 	test: {
 		clearMocks: true,
 		globals: true,
@@ -18,6 +15,6 @@ export default defineConfig(({ mode }) => ({
 		hookTimeout: 15000
 	},
 	resolve: {
-		alias: [{ find: "@", replacement: path.resolve(__dirname, "./src") }],
+		alias: [{ find: "@", replacement: path.resolve(import.meta.dirname, "./src") }],
 	},
 }));

@@ -1,0 +1,12 @@
+diff --git a/node_modules/drizzle-orm/mysql2/driver.js b/node_modules/drizzle-orm/mysql2/driver.js
+index 1fa006f..0e47e4a 100644
+--- a/node_modules/drizzle-orm/mysql2/driver.js
++++ b/node_modules/drizzle-orm/mysql2/driver.js
+@@ -12,6 +12,7 @@ var MySql2Database = class extends MySqlAsyncDatabase {
+ 	static [entityKind] = "MySql2Database";
+ };
+ function construct(client, config = {}) {
++	client.config = client.config || {};
+ 	client.config.supportBigNumbers = true;
+ 	const dialect = new MySqlDialect({
+ 		useJitMappers: jitCompatCheck(config.jit),

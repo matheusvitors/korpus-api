@@ -1,7 +1,6 @@
 import { Router, Request, Response } from "express";
 import project from '../package.json';
-import { exercicioPrismaRepository } from "@/infra/database/prisma";
-// import * as appRoutes from '@/infra/routes';
+import * as appRoutes from '@/infra/routes';
 
 const routes = Router();
 
@@ -19,19 +18,6 @@ routes.get('/test', async (request: Request, response: Response) => {
 	});
 });
 
-routes.get('/exercicios', async (request: Request, response: Response) => {
-	try {
-		const exercicios =await exercicioPrismaRepository.list();
-		response.status(200).send({
-			exercicios
-		});
-	} catch (error) {
-		response.status(500).send({
-			error
-		})
-	}
-});
-
-// routes.use(Object.values(appRoutes))
+routes.use(Object.values(appRoutes))
 
 export { routes }

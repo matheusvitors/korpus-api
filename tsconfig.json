@@ -2,7 +2,7 @@
 {
 	"compilerOptions": {
 		"target": "ES2022",
-		"module": "node20",
+		"module": "commonjs",
 		"lib": ["ES2023"],
 		"resolveJsonModule": true,
 		"allowJs": true,
@@ -14,7 +14,8 @@
 		"strict": true,
 		"skipLibCheck": true,
 		"strictPropertyInitialization": false,
-		"baseUrl": ".",
+		"allowImportingTsExtensions": true,
+		"noEmit": true,
 		"paths": {
 			"@/*": ["./src/*"]
 		},

@@ -1,0 +1,141 @@
+{
+  "version": "6",
+  "dialect": "mysql",
+  "id": "9a5154ad-32cc-45c0-bfc3-043dc8a98b89",
+  "prevIds": [
+    "00000000-0000-0000-0000-000000000000"
+  ],
+  "ddl": [
+    {
+      "name": "usuarios",
+      "entityType": "tables"
+    },
+    {
+      "type": "varchar(255)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "id",
+      "entityType": "columns",
+      "table": "usuarios"
+    },
+    {
+      "type": "varchar(255)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "nome",
+      "entityType": "columns",
+      "table": "usuarios"
+    },
+    {
+      "type": "varchar(255)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "username",
+      "entityType": "columns",
+      "table": "usuarios"
+    },
+    {
+      "type": "varchar(255)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "password",
+      "entityType": "columns",
+      "table": "usuarios"
+    },
+    {
+      "type": "varchar(255)",
+      "notNull": true,
+      "autoIncrement": false,
+      "default": null,
+      "onUpdateNow": false,
+      "onUpdateNowFsp": null,
+      "charSet": null,
+      "collation": null,
+      "generated": null,
+      "name": "email",
+      "entityType": "columns",
+      "table": "usuarios"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "name": "PRIMARY",
+      "table": "usuarios",
+      "entityType": "pks"
+    },
+    {
+      "columns": [
+        {
+          "value": "id",
+          "isExpression": false
+        }
+      ],
+      "isUnique": true,
+      "using": null,
+      "algorithm": null,
+      "lock": null,
+      "nameExplicit": false,
+      "name": "id_unique",
+      "table": "usuarios",
+      "entityType": "indexes"
+    },
+    {
+      "columns": [
+        {
+          "value": "username",
+          "isExpression": false
+        }
+      ],
+      "isUnique": true,
+      "using": null,
+      "algorithm": null,
+      "lock": null,
+      "nameExplicit": false,
+      "name": "username_unique",
+      "table": "usuarios",
+      "entityType": "indexes"
+    },
+    {
+      "columns": [
+        {
+          "value": "email",
+          "isExpression": false
+        }
+      ],
+      "isUnique": true,
+      "using": null,
+      "algorithm": null,
+      "lock": null,
+      "nameExplicit": false,
+      "name": "email_unique",
+      "table": "usuarios",
+      "entityType": "indexes"
+    }
+  ],
+  "renames": []
+}
