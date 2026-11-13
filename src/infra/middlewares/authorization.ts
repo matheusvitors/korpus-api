@@ -3,7 +3,7 @@ import { jwt } from "@/infra/adapters/jwt";
 
 export const authorization = async (request: Request, response: Response, next: NextFunction) => {
 	try {
-		const unprotectedPaths = ['/', '/login'];
+		const unprotectedPaths = ['/', '/auth/login', '/auth/refresh'];
 
 		if(unprotectedPaths.includes(request.path) || process.env.AUTHENTICATION === 'false') {
 			return next();

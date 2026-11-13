@@ -26,6 +26,6 @@ describe('See your profile - Integration Test', () => {
 		.set({ authorization: `Bearer ${token}` });
 
 		expect(response.status).toEqual(200);
-		expect(response.body.response.content).toEqual(user);
+		expect(response.body.response.content.username).toEqual(user.username);
 	});
 });

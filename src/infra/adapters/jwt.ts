@@ -6,15 +6,16 @@ import { JWT_EXPIRE, SECRET } from "@/infra/config/environment";
 interface JwtEncodeParams {
 	payload: any;
 	expiration?: string;
+	secret?: string;
 }
 
 export const jwt = {
-	encode: ({ payload, expiration }: JwtEncodeParams): string => {
+	encode: ({ payload, expiration, secret }: JwtEncodeParams): string => {
 		if (SECRET) {
 			try {
 				return Jwt.sign(
 					{ payload },
-					SECRET,
+					secret || SECRET,
 					{expiresIn: (expiration || JWT_EXPIRE) as ms.StringValue}
 				);
 			} catch (error: any) {
@@ -25,10 +26,10 @@ export const jwt = {
 		}
 	},
 
-	verify: (jwt: string): JwtPayload => {
+	verify: (jwt: string, secret?: string): JwtPayload => {
 		try {
 			if (SECRET) {
-				const data = Jwt.verify(jwt, SECRET);
+				const data = Jwt.verify(jwt, secret || SECRET);
 				if(typeof data === 'string') {
 					return JSON.parse(data);
 				}

@@ -20,8 +20,9 @@
 		"db:generate": "npx drizzle-kit generate",
 		"db:migrate": "npx drizzle-kit migrate",
 		"db:reset": "dotenv run -f .env.test -- npx tsx ./__tests__/reset.ts",
-		"fix-ssl": "set NODE_TLS_REJECT_UNAUTHORIZED=0",
-		"postinstall": "npx patch-package"
+		"db:seed": "dotenv run -f .env -- npx tsx seeds/seeder.ts",
+		"postinstall": "npx patch-package",
+		"fix-ssl": "set NODE_TLS_REJECT_UNAUTHORIZED=0"
 	},
 	"repository": {
 		"type": "git",

@@ -27,8 +27,9 @@
 		"require": ["tsconfig-paths/register"]
 	},
 	"include": [
+		"./",
 		"src/**/*.ts",
-		"__tests__"
+		"__tests__/**/*.ts"
 	],
 	"exclude": ["node_modules", "dist"]
 }

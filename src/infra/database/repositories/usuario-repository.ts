@@ -5,6 +5,7 @@ import { database } from "@/infra/database/database";
 import { usuariosTable } from "@/infra/database/schema";
 import { toUsuario } from "@/utils/transforms";
 import { UsuarioDTO } from "@/application/dto";
+import { encrypt } from "@/infra/adapters/encryption";
 
 export const usuarioRepository: Repository<Usuario, UsuarioDTO> = {
 	list: async (): Promise<Usuario[]> => {
@@ -50,7 +51,7 @@ export const usuarioRepository: Repository<Usuario, UsuarioDTO> = {
 				id: input.id,
 				nome: input.nome,
 				username: input.username,
-				password: input.password,
+				password: await encrypt(input.password),
 				email: input.email
 			});
 
